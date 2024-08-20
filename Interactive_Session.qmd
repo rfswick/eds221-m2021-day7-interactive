@@ -1,0 +1,13 @@
+---
+title: "EDS221: Day 7 Interactive Session"
+author: "Rachel Swick"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(lubridate)
+```
+
