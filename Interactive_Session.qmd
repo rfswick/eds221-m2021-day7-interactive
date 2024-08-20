@@ -11,3 +11,20 @@ library(palmerpenguins)
 library(lubridate)
 ```
 
+```{r}
+biscoe_dream_penguins <- penguins |>
+  dplyr::filter(island %in% c("Biscoe", "Dream")) |>
+  select(-c(year, sex)) |>
+  mutate(body_mass_kg = body_mass_g / 1000) |>
+  rename(location = island)
+```
+
+```{r}
+adelie_penguins <- penguins |>
+  dplyr::filter(species == "Adelie" & !is.na(flipper_length_mm)) |>
+  group_by(sex) |>
+  summarize(penguin_mean = mean(flipper_length_mm), 
+            penguin_sd = sd(flipper_length_mm), 
+            penguin_count = n())
+```
+
